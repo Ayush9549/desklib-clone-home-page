@@ -2,10 +2,22 @@
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
+// Show hide password
 $(".pass i").click(function () {
-	$(".pass i").attr('<i class="fa-regular fa-eye-slash"></i>')
-})
+	if($(this).hasClass('fa-eye'))
+	{
+		$(".pass i").addClass("fa-eye-slash").removeClass("fa-eye");
+		$('.pass input').attr('type','text');
+	}
+	else
+	{
+		$(".pass i").addClass("fa-eye").removeClass("fa-eye-slash");
+		$('.pass input').attr('type','password');
+	}
+});
 
+
+// hero area card
 $(".hero_area ul li").hover(function () {
 	$(this).addClass("active").siblings().removeClass("active");
 	$(this).children().children(".article_para").removeClass("hide");
@@ -18,6 +30,7 @@ $(".hero_area ul li").mouseout(function () {
 	$(this).children(".article").removeClass("active_article");
 });
 
+
 // bus_mang
 $(".bus_mang").hover(function () {
 	$(".business_mang").css("display","block");
@@ -25,6 +38,8 @@ $(".bus_mang").hover(function () {
 $(".container").hover(function(){
 	$(".business_mang").css("display","none");
 });
+
+
 // slider
 var swiper = new Swiper(".mySwiper", {
 	slidePerView:1,
@@ -38,6 +53,8 @@ var swiper = new Swiper(".mySwiper", {
 	clickable: true,
 	},
 });
+
+
 // 2 slider
 var swiper = new Swiper(".mySwiper2", {
 loop: true,
