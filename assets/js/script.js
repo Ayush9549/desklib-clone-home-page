@@ -17,20 +17,6 @@ $(".pass i").click(function () {
 });
 
 
-// hero area card
-$(".hero_area ul li").hover(function () {
-	$(this).addClass("active").siblings().removeClass("active");
-	$(this).children().children(".article_para").removeClass("hide");
-	$(this).children(".article").addClass("active_article").siblings().removeClass("active_article");
-});
-
-$(".hero_area ul li").mouseout(function () {
-	$(this).removeClass("active");
-	$(".hero_area ul li p").addClass("hide");
-	$(this).children(".article").removeClass("active_article");
-});
-
-
 // bus_mang
 $(".bus_mang").hover(function () {
 	$(".business_mang").css("display","block");
